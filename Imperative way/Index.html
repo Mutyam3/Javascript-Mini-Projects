@@ -1,0 +1,366 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> Imperative approach
+        </title>
+        <meta name="viewport" content="width=device-width   initial-scale=1">
+        <style>
+
+            body
+            {
+                 text-align: center;
+                 box-sizing: border-box;
+                 margin : 40px;
+                 background-color:whitesmoke;
+            }
+
+            #maindiv{
+                  border:2px solid black;
+                  padding:25px;
+                  border-radius: 20px; 
+                  background-color: rgb(2,48,71);
+            }
+           
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+                box-sizing: border-box;
+            }
+
+            h2{
+                color: aliceblue;
+            }
+
+            #list
+            {
+                padding-left: 0;
+                background-color: whitesmoke;
+
+            }
+
+             #list,#div1
+             {
+                width:100%;
+                border:2px solid white;
+                /* height:150px; */
+                display: inline-block;
+                padding:40px; 
+                border-radius: 15px;
+                box-sizing: border-box;
+               
+             }
+
+             table 
+             {
+                padding:10px;
+                border-radius:10px;
+                width:100%;
+                border:2px solid white;
+                background-color: rgb(255,183,3);
+             }
+
+             img{
+                   width:150px;
+                   padding:10px;
+             }
+
+             thead th{
+                padding:15px;
+                border:2px solid white;
+                background-color: white;
+                font-size: large;
+             }
+
+             table tbody td 
+             {
+                text-align: center;
+                 border : 0px; 
+                 font-weight: bold;
+             }
+
+              tr:nth-of-type(2n){
+                background-color: rgb(251,133,0)
+             } 
+
+             h3{
+                /* border:2px solid black; */
+                display: inline-block;
+                padding: 5px;
+                background-color: crimson;
+                color:white;
+                border-radius: 10px;
+             }
+
+            
+
+             #list01 , #list02 
+             {
+                  background-color: rgb(244, 231, 234);
+                  color: rgb(20, 20, 20);
+                  /* text-align: center;
+                  list-style-position: inside; */
+                  padding:20px;
+                  /* border:2px solid black; */
+                  border-radius : 10px;
+                  
+             }
+
+             #list01 {
+                background-color: crimson;
+             }
+
+             #list02{
+                background-color: rgb(1,156,216);
+                
+             }
+
+             #list02 li 
+             {
+                color:rgb(18, 19, 19);
+             }
+
+             li{
+                font-size: large;
+                color:rgb(16, 15, 15);
+                margin:10px;
+                font-weight: bold;
+             }
+
+
+            @media(max-width: 1300px)
+            {
+                #div1{
+                    
+                     overflow-x: scroll;
+                }
+            }
+
+
+            
+            
+        </style>
+    </head>
+
+    <body>
+
+               <div id="maindiv">
+                <h2>Imperative way</h2>
+
+                 
+                <ul id="list">
+
+                    <h3>List of Tollywood Hero Names </h3>
+                    
+                     <ul id="list01">
+                        
+                         <h3>Senior Heroes : </h3>
+
+                     </ul>
+
+                     <ul id="list02">
+                          <h3>Present Gen Heroes : </h3>
+
+                     </ul>
+                    
+                </ul>
+
+                 <div id="div1">
+
+                    <table border="2px" align="center" cellspacing="0px;">
+                        <thead>
+                            <th>S.no</th>
+                            <th>Poster</th>
+                            <th>Movie Name</th>
+                            <th>Hero</th>
+                            <th>Heroine</th>
+                            <th>Date Of Release</th>
+                            <th>Collections</th>
+                        </thead>
+                        <tbody id="tbd">
+                                
+                        </tbody>
+                    </table>
+
+                 </div>
+                </div>
+          
+                <script>
+
+
+                   const seniorHeroes = ["Chiranjeevi", "Balayya", "Venkatesh", "Nagarjuna", "RaviTeja"]
+
+                   const presentHeroes = ["MaheshBabu", "Ramcharan", "NTR", "Allu Arjun","Prabhas"]
+
+                   
+                          
+                                                
+                                       seniorHeroes.forEach(function(el, ind)
+                                                 {
+                                                    
+                                                    setTimeout(function()
+                                                     {
+                                                        var newli = document.createElement("li")
+                                                                    newli.innerHTML = el
+                                                        document.getElementById("list01").appendChild(newli)
+                                                         
+                                                         
+                                                     }, 3000*ind)
+                                                    
+                                                 })
+
+                                       presentHeroes.forEach(function(el, ind)
+                                                 {
+                                                     
+                                                     setTimeout(function()
+                                                         {
+                                                            var newli = document.createElement("li")
+                                                                    newli.innerHTML = el
+                                                             document.getElementById("list02").appendChild(newli)
+              
+                                                         }, 3000 * ind)
+                                                       
+                                                   
+                                                 })
+
+                                       
+                    
+                     
+                    const movies = [
+                                     {
+                                        poster : "https://rukminim2.flixcart.com/image/850/1000/l3bx5e80/poster/w/v/x/small-kgf-poster-kgf-yash-movie-poster-for-room-kgf-chapter-2-original-imageh8s4ydnfddc.jpeg",
+                                        movieName:"KGF",
+                                        hero : "Yash",
+                                        heroine : "Srinidi shetty",
+                                        dateOfRelease : "28 August 2017",
+                                        Collections : ["Day 1 : 50cr", "Day 2 : 40cr", "Day 3 : 70cr"]
+                                     },
+                                     {
+                                        poster : "https://upload.wikimedia.org/wikipedia/en/thumb/d/d7/RRR_Poster.jpg/220px-RRR_Poster.jpg",
+                                        movieName:"RRR",
+                                        hero : ["Ramcharan", "Ntr"],
+                                        heroine : ["Alia bhatt", "Olivia Morris"],
+                                        dateOfRelease : "16 September 2022",
+                                        Collections : ["Day 1 : 10cr", "Day 2 : 15cr", "Day 3 : 19cr"]
+                                     },
+                                     {
+                                        poster : "https://m.media-amazon.com/images/S/pv-target-images/e835004ab4066a11eec99aff316a6fe4f2a4f7c1b5c8a15505d006cc00520ccb.jpg",
+                                        movieName:"Vinaya Vidheya Rama",
+                                        hero : "Ramcharan",
+                                        heroine : "kiara Advani",
+                                        dateOfRelease : "11 January 2019",
+                                        Collections : ["Day 1 : 15cr", "Day 2 : 25cr", "Day 3 : 35cr"]
+                                     },
+                                     {
+                                        poster : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ1Xff92AUUzR31vxLQfJUf_nOwmPfPlbxjdD13awXw7Kl-JNm7EgbxOFCuJVRh22EqpU&usqp=CAU",
+                                        movieName:"Ismart Shankar",
+                                        hero : "Ram",
+                                        heroine : ["Nabha", "Nidhi"],
+                                        dateOfRelease : "18 July 2019",
+                                        Collections : ["Day 1 : 45cr", "Day 2 : 40cr", "Day 3 : 70cr"]
+                                     },
+                                     {
+                                        poster : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQabu94ompYUW3kTtr-nFYOLq0CQsRmAiF-AtE_mc2pCzpSwFbnJ1ck4nu1rgJTGhEn5cKH-0Ob9IWCVOJDl0S2pKSTG0uHulq2KIfBIA",
+                                        movieName:"Gunturkaaram",
+                                        hero : "MaheshBabu",
+                                        heroine : ["Sreeleela", "Meenakshi"],
+                                        dateOfRelease : "12 January 2024",
+                                        Collections : ["Day 1 : 60cr", "Day 2 : 50cr", "Day 3 : 79cr"]
+                                     },
+                                     {
+                                        poster : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8BM8b7x2Efm3QeelIVWYXO9qk9sHdNMYwZ75qZ9QerdgNPwF6N6cBbgBL2jGP6hNnBTzGFKvF0sDq9W9cMN4EV8djCmfZgwpdhJOJfQ",
+                                        movieName:"Pushpa",
+                                        hero : "Allu Arjun",
+                                        heroine : "Rashmika",
+                                        dateOfRelease : "17 Dec 2021",
+                                        Collections : ["Day 1 : 50cr", "Day 2 : 45cr", "Day 3 : 90cr"]
+                                     },
+                                     {
+                                        poster : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd1whKKsXwC3PxVlj3zic6gmNYHn8ePPn5Kg&s",
+                                        movieName:"Aravindha Sametha",
+                                        hero : "NTR",
+                                        heroine : "Pooja Hedge",
+                                        dateOfRelease : "11 October 2018",
+                                        Collections : ["Day 1 : 54cr", "Day 2 : 40cr", "Day 3 : 60cr"]
+                                     }
+                                   ]
+
+                       
+                                  
+                                   var s = 0;
+                                 
+                               
+                                  
+                                  
+                                    for(let a = 0; a<=movies.length-1; a++)
+                                     {
+
+                                   
+                                        setTimeout(function()
+                                        { 
+                                        
+
+                                        var newtr = document.createElement("tr"); 
+                                      
+                                        var tdOne = document.createElement("td");
+                      
+                                                    tdOne.innerHTML = s+1;
+                                                    s++;
+
+                                        var tdTwo = document.createElement("td"); 
+                                        var tdTwoImage = document.createElement("img")
+                                                    tdTwoImage.src =  movies[a]["poster"]
+                                                    tdTwo.appendChild(tdTwoImage)
+
+                                        var tdThree = document.createElement("td")
+                                                      tdThree.innerHTML =movies[a]["movieName"] 
+
+                                        var tdFour = document.createElement("td") 
+                                                      if(movies[a]["hero"].length !== 1)
+                                                      {
+                                                        tdFour.innerHTML = movies[a]["hero"]
+                                                      }
+                                                      else 
+                                                      {
+                                                        tdFour.innerHTML = movies[a]["hero"][0] + " " + a["hero"][1]
+                                                      }
+
+                                        var tdFive = document.createElement("td")
+                                                    if(movies[a]["heroine"].length !== 1)
+                                                      {
+                                                        tdFive.innerHTML = movies[a]["heroine"]
+                                                      }
+                                                      else 
+                                                      {
+                                                        tdive.innerHTML = movies[a]["heroine"][0] + " " +a["heroine"][1]
+                                                      }
+
+                                        var tdSix = document.createElement("td"); 
+                                                     tdSix.innerHTML = movies[a]["dateOfRelease"]
+
+                                        var tdSeven  = document.createElement("td") 
+                                                       for(var i =0; i<=movies[a]["Collections"].length-1; i++)
+                                                       {
+                                                              tdSeven.innerHTML = tdSeven.innerHTML + movies[a]["Collections"][i] + " | ";
+                                                       }
+
+                                                   
+
+                                                       newtr.appendChild(tdOne)
+                                                       newtr.appendChild(tdTwo)
+                                                       newtr.appendChild(tdThree)
+                                                       newtr.appendChild(tdFour)
+                                                       newtr.appendChild(tdFive)
+                                                       newtr.appendChild(tdSix)
+                                                       newtr.appendChild(tdSeven)
+
+                                                           
+                                               
+                                                          document.getElementById('tbd').appendChild(newtr)
+
+                                                      }, 5000 * a)       
+                
+                                    }
+              
+                </script>
+
+    </body>
+</html>
