@@ -1,0 +1,468 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> Javascript_GenUI Tables 
+        </title>
+        <style>
+
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            section
+            {
+               border:2px solid black;
+               margin:20px;
+               padding:10px;
+               text-align: center;
+               border-radius: 32px;
+               background-color:rgb(20,33,61);
+               color:white;
+            }
+
+            #formdiv{
+                box-sizing: border-box;
+                /* border:5px solid blue; */
+                padding:30px;
+                margin:50px;
+                background-color: rgb(252,163,17);
+                border-radius: 32px;
+                color:white;
+                font-size: large;
+                width:75%;
+                margin:0 auto;
+                box-shadow: 10px 10px 15px black;
+                margin-bottom: 120px;
+            }
+
+            p{
+                font-size: large;
+                font-weight: bold;
+            }
+
+
+            fieldset{
+                border: 4px solid white;
+                border-radius:22px;
+            }
+
+            label{
+                color:black;
+                font-size: large;
+                font-weight: bold;
+            }
+
+            input{
+                margin:10px;
+                border-radius: 10px;
+                padding:8px;
+                border:0px;
+                
+            }
+
+            legend{
+                background-color: aliceblue;
+                border:2px solid black;
+                color:black;
+                padding:6px 60px 6px 60px;
+                font-weight: bolder;
+                /* font-size: larger; */
+                border-radius: 10px;
+                background-color: black;
+                color:azure;
+                
+            }
+
+            select{
+                margin:10px;
+                font-size: 1.1rem;
+            }
+
+            button, [type="reset"]{
+                padding:10px 40px 10px 40px;
+                border:0px;
+                border-radius: 32px;
+                background-color: black;
+                color:whitesmoke;
+                font-size: large;
+            }
+
+            hr{
+                  border:2px solid white;
+                  margin: 15px 5px 15px 5px;
+            }
+
+            table thead th 
+            {
+                color:white;
+                background-color: black;
+            }
+            table{
+                border:3px solid white;
+                padding:10px;
+                border-radius: 12px;
+                box-sizing: border-box;
+                width:100%;
+                /* overflow-x: scroll; */
+            }
+
+            table tbody tr td , thead th
+            {
+                    padding:8px 40px 8px 40px;
+            }
+
+            table tbody tr 
+            {
+                font-size: large;
+                background-color: rgb(252,163,17);
+                color:black;
+                font-weight: bold;
+            }
+
+             tr:nth-child(2n)
+            {
+                
+                color : white;
+                background-color: crimson;
+            }
+
+            #imagediv
+            {
+                width:100px;
+                height:100px;
+                border:2px solid white;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            img{
+                width : 100%;
+                height:100%;
+            }
+
+            #tablediv
+            {
+                margin-top: 100px;
+                box-sizing: border-box;
+                width:100%;
+                overflow-x:scroll; 
+               
+            }
+
+            #tablediv::-webkit-scrollbar {
+                 display: none;
+            }
+
+
+        </style>
+    </head>
+    <body>
+
+
+
+        <section>
+
+                <h2>GenUI < -- > Tables</h2>
+
+                <p>[ &nbsp;&nbsp;Followed Data Centric Approach &nbsp;&nbsp;]</p>
+
+                <div id="formdiv">
+                 <form onsubmit = "formSubmit(event)" name="studentForm" method="post" autocomplete="off">
+                     <fieldset>
+                        <legend>Fill in the form :</legend> 
+                    
+                   <label for="fn">FirstName : <input type="text" id="fn"  name="firstName"></label><br>
+                   <label for="ln">LastName :  <input type="text"  id="ln" name="lastName"></label><br>
+                   <label for="Date">Date of Birth : <input type="date" id="Date" name="dateOfBirth"></label><br>
+                   <label for="gen">Gender :
+                          <input type="radio" name="gender" value="Male" id="gen">Male  
+                          <input type="radio" name="gender" value="Female" id="gen">Female 
+                          <input type="radio" name="gender" value="Others" id="gen">Others 
+                  </label><br>
+                  <label for="em">Email :
+                    <input type="email" id="em" name="email" onchange="userName(event)">
+                  </label><br>
+                   <label for="course" >Choose your course :  <br>
+                    <input type="checkbox" name="course" id="course" value="Java"  onchange="checklist(event)">JAVA  <br>
+                    <input type="checkbox" name="course" id="course" value="Ai and Ml" onchange="checklist(event)">AI/ML  <br>
+                    <input type="checkbox" name="course" id="course" value="Python" onchange="checklist(event)">PYTHON <br>
+                    <input type="checkbox" name="course" id="course" value="Mern" onchange="checklist(event)">MERN  <br>
+                    <input type="checkbox" name="course" id="course" value="Mean" onchange="checklist(event)">MEAN   <br>
+                    <input type="checkbox" name="course" id="course" value="Datascience" onchange="checklist(event)">DATA SCIENCE <br>
+                    <input type="checkbox" name="course" id="course" value="Cybersecurity" onchange="checklist(event)">CYBERSECURITY
+                   </label> <br>
+
+                   <label for="country">Select Country : 
+                             <select id="country" name="Country">
+                                            <option disabled selected>---select country---</option>
+                                            <option value="India">India</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="USA">USA</option>
+                                            <option value="NewZealand">NewZealand</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Others">Others</option>
+                             </select>
+                   </label><br>
+                   <label for="image">Image: 
+                   <input type="file" accept="image/*" name="img" id="image" onchange="im(event)">
+                   </label><br>
+                   <button>Submit</button>
+                   <!-- <input type="reset" id="res"> -->
+                    
+                </fieldset>
+                </form>
+
+                </div>
+                
+                <hr>
+
+                <div id="tablediv">
+
+                <table border="2" cellspacing="0px" >
+                    <thead>
+                        <th>S.no</th>
+                        <th>Id</th>
+                        <th>Profile Photo</th>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Email</th>
+                        <th>Country</th>
+                        <th>Courses</th>
+                    </thead>
+                    <tbody id="tbd">
+
+                        
+                    </tbody>
+                </table>
+
+            </div>
+               
+
+            </section>
+
+    <!-- script starts here -->
+
+        <script>
+
+            const details = [];
+            
+            let stdFirstName = document.studentForm.firstName;
+            let stdLastName = document.studentForm.lastName; 
+            let stdDateOfBirth = document.studentForm.dateOfBirth;
+            let stdGender = document.studentForm.gender;
+            let stdEmail = document.studentForm.email;
+            let stdCourse = document.studentForm.course;
+            let stdCountry = document.studentForm.Country;
+            let stdImage = document.studentForm.img;
+            let age;
+            let url;
+            var tdCourses;
+            var stdDetails;
+            let username;
+            var mainCourse = []
+
+
+         
+             // checkbox handling function
+                function checklist(ev)
+                          {
+                            if(ev.target.checked===true)
+                            {
+                               mainCourse.push(ev.target.value);
+                            }
+                           else 
+                            {
+                               mainCourse = mainCourse.filter(function(uncheckel)
+                                  {
+                                    if(uncheckel === ev.target.value)
+                                    {
+                                        return false;
+                                    }
+                                    else 
+                                    {
+                                        return true;
+                                    }
+                                  }
+                                  )
+                            }
+
+                             console.log(mainCourse);
+                         
+                           }
+          
+                    
+             //image url generator
+                 function im(ev)
+                 {
+                    url =  window.URL.createObjectURL(ev.target.files[0]);
+                 }
+                  
+
+             //username generator
+                 function userName(e)
+                     {
+                    // var user = new String(e.target.value);
+                    // username = new String(''); 
+                    var user = e.target.value;
+                     username = ""
+                    for(var i = 0; i<=user.length-1; i++)
+                      {
+                             if(user[i] !== '@')
+                             {
+                                  username += user[i];
+                                  
+                             }
+                             else 
+                             {
+                                break;
+                             }
+                      }  
+                 }
+               
+              //clear the form fields after sunmitting the form
+                 function res()
+                      {
+                      stdFirstName.value = ''
+                      stdLastName.value = '' 
+                      stdDateOfBirth.value = ''
+                      var radioCheck = document.querySelectorAll("#gen")
+                      radioCheck.forEach(function(el)
+                                    {
+                                        el.checked = false 
+                                    })
+                      stdEmail.value = ''
+                      var boxCheck= document.querySelectorAll("#course")
+                      boxCheck.forEach(function(el)
+                                    {
+                                        el.checked = false 
+                                    })
+                      stdCountry.value=''
+                      stdImage.value  = ''
+                      mainCourse = []
+                      
+                      }
+
+                
+               //submit the form 
+                      
+               function  formSubmit(ev) 
+                         {
+                           ev.preventDefault();
+  
+                           stdDetails = 
+                                {
+                                    firstName : '',
+                                    lastName  : '',
+                                    age : '',
+                                    gender : '',
+                                    email : '',
+                                    course : [],
+                                    country : '',
+                                    image : '',
+                                    username : ''
+                                }
+                      
+                              
+                                // details.push(stdDetails);
+                     
+                            var birthDate = new Date(stdDateOfBirth.value)
+                            var currentDate = new Date();
+
+                            age = parseInt((currentDate.getTime() - birthDate.getTime())/ (1000*60*60*24*365))
+                           
+
+                            stdDetails.firstName = stdFirstName.value
+                            stdDetails.lastName = stdLastName.value
+                            stdDetails.age = age
+                            stdDetails.gender = stdGender.value
+                            stdDetails.email = stdEmail.value
+                            stdDetails.country = stdCountry.value
+                            stdDetails.image = url 
+                            console.log(url)
+                            stdDetails.course = [...mainCourse] // used destructuring 
+                            stdDetails.username = username
+                            details.push(stdDetails);
+
+                            // Calling the function of genui as it generate the ui for the given data  in the form of tables
+                            genUI()
+                            // after submitting the form it clear the form fields to enter the new data
+                            res()  
+               } 
+
+
+
+
+               // generate userinterface for the data in the form of tables 
+               function genUI()
+               {
+                 
+                    document.getElementById("tbd").innerHTML = ""
+                    var sNo = 0;
+                    let idp = 100;
+                  
+                    details.forEach( function(el, ind)
+                        {
+                  
+                    var newtr = document.createElement("tr")
+                    var tdSno = document.createElement("td")
+                                tdSno.innerHTML = sNo+1 
+                                 sNo++
+                    var tdId = document.createElement("td")
+                              
+                                      tdId.innerHTML = "AMB" + idp 
+                                      idp++;
+                  
+                    var tdPhoto = document.createElement("td")
+                    var tddiv = document.createElement("div")
+                                  tddiv.setAttribute("id","imagediv")
+                    var profileImg = document.createElement("img")
+                                profileImg.src = el.image
+                                tddiv.appendChild(profileImg)
+                                tdPhoto.appendChild(tddiv);
+
+                    var tdUserName  = document.createElement("td")
+                                      tdUserName.innerHTML = el.username;  
+                    var tdName = document.createElement("td") 
+                                   tdName.innerHTML = el.firstName + " " + el.lastName;
+                    var tdAge = document.createElement("td")
+                                  tdAge.innerHTML = el.age 
+                    var tdGender = document.createElement("td")
+                                   tdGender.innerHTML = el.gender 
+                    var tdEmail = document.createElement("td")
+                                   tdEmail.innerHTML = el.email 
+                    var tdCountry = document.createElement("td")
+                                tdCountry.innerHTML = el.country 
+                     tdCourses = document.createElement("td") 
+                                   for(var i = 0; i<=el.course.length-1;i++)
+                                   {
+                                       tdCourses.innerHTML +=   el.course[i] + " , "  
+                                   }
+
+
+                            newtr.appendChild(tdSno)
+                            newtr.appendChild(tdId)
+                            newtr.appendChild(tdPhoto)
+                            newtr.appendChild(tdUserName)
+                            newtr.appendChild(tdName)
+                            newtr.appendChild(tdAge)
+                            newtr.appendChild(tdGender)
+                            newtr.appendChild(tdEmail)
+                            newtr.appendChild(tdCountry)
+                            newtr.appendChild(tdCourses)
+
+                            document.getElementById("tbd").appendChild(newtr);
+
+                 }  )
+               
+               }
+         
+      </script>
+
+      <!-- script emds here -->
+
+
+
+    </body>
+</html>
