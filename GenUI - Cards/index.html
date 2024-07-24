@@ -1,0 +1,461 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==> GenUI Card
+        </title>
+        <script src="https://kit.fontawesome.com/72b3e5b518.js" crossorigin="anonymous"></script>
+        <style>
+             body{
+                margin : 40px;
+                font-family: Arial;
+                background-color: rgba(0, 0, 0, 0.976);
+             }
+
+             *{
+                box-sizing: border-box;
+             }
+
+             #formSection p 
+             {
+               font-size: large;
+               font-weight: bold;  
+             }
+
+             #formSection   
+             {
+                text-align: center;
+                width:75%;
+                border:2px solid black;
+                margin : 0 auto;
+                border-radius:32px;
+                background-color: rgb(8, 8, 8);
+                color:white;
+                border:2px solid white;
+             }
+
+
+             fieldset
+             {
+                width:50%;
+                margin :auto;
+                border-radius:22px;
+                font-size: large;
+                background-color: crimson;
+                border:3px solid rgb(239, 234, 234);
+                font-weight: bold;
+             }
+
+             form fieldset legend{
+                font-size: large;
+                background-color: black;
+                color:azure;
+                padding:6px;
+                border-radius : 10px;
+                
+             }
+
+              label input 
+             {
+                padding :4px;
+                margin : 8px;
+                border-radius : 10px;
+                border:0px solid;
+             }
+
+             #formUl label
+             {
+               color:rgb(0, 0, 0);
+             }
+
+             #formUl
+             {
+                padding-left:0px;
+             }
+
+             #cardSection
+             {  
+                border:2px solid white;
+                width :100%;
+                padding:100px;
+                margin-top:40px;
+                box-sizing: border-box;
+                /* display:flex ;
+                flex-wrap: wrap; */
+             }
+
+             #cardUl
+             {
+                display: flex;
+                gap:20%;
+                flex-wrap: wrap;
+                
+             }
+
+             #cardUl .cards{
+                       border:2px solid white;
+                       color:aliceblue;
+                       border-radius: 15px;
+                       box-sizing: border-box;
+                       overflow: hidden;
+                       margin: 10px;
+                       width:33%;
+                    
+             }
+                
+             #profileImg
+             {
+                width:100px;
+                height:100px;
+                border-radius: 50%;
+                border :2px solid white;
+                overflow: hidden;
+                
+             }
+
+             #profileImg img 
+             {
+                  width:100%;
+                  height:100%;   
+             }
+
+             .infoDiv 
+             {
+                /* border:2px solid white; */
+                border-top: 2px solid white;
+                padding:20px;
+                text-align: center;
+             }
+
+             #upCard
+             {
+                /* border:2px solid white; */
+                padding:20px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+             }
+
+              .skillsUl
+               {
+                   padding-left: 0px;
+                   border-top:2px solid white;
+                   text-align: center;
+                   display : flex;
+                   flex-wrap: wrap;
+
+               }
+             .skillsUl li
+             {
+                list-style: none;
+                border:2px solid white;
+                padding:10px;
+                margin:8px;
+                border-radius: 10px;
+                background-color: white;
+                color:black;
+                
+                
+             }
+
+             i{
+                margin:5px;
+                font-size: 1.8rem;
+                color:whitesmoke
+             }
+            
+   
+        </style>
+    </head>
+    <body>
+
+         <!-- form section starts here -->
+
+        <section id="formSection">
+
+                 <h2>GenUI <  --  > Cards</h2>
+                 <p>[  &nbsp; &nbsp;Followed Data Centric Approach &nbsp; &nbsp; ]</p>
+
+                <form name="employeeForm" onsubmit="employeeFormSubmit(event)" autocomplete="on">
+                    <fieldset>
+                        <legend>Fill out the Form</legend>
+                  
+
+                    <label for="name"> Name <input type="text" id="name" name="name"></label><br>
+                    <label for="place"> Place <input type="text" id="place" name="place"></label><br>
+                    <label for="role"> Role  <input type="text" id="role" name="role"></label><br>
+                    <label for="linkedin"> Linked in URL <input type="text" id="linkedin" name="linkedinURL"></label><br>
+                    <label> Github Link <input type="text" id="Github" name="githubLink"></label><br>
+                    <ul type="none" id="formUl">
+                    <label for="skills"> Skills 
+                        
+                            <li> 
+                                <input type="checkbox"  name="Skills"  value="UI/UX"  onchange="chooseSkill(event)" id="skills"> UI/UX  
+                            </li>
+                                <input type="checkbox"  name="Skills"  value="FrontEnd Development" onchange="chooseSkill(event)" id="skills"> FrontEnd Development
+                            
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="HTML" onchange="chooseSkill(event)" id="skills"> HTML
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="CSS" onchange="chooseSkill(event)" id="skills">  CSS 
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="Javascript"  onchange="chooseSkill(event)" id="skills"> Javascript
+                            </li>
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="React" onchange="chooseSkill(event)" id="skills"> React 
+                            </li>
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="Bootstap" onchange="chooseSkill(event)" id="skills"> Bootstap
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="Python" onchange="chooseSkill(event)" id="skills"> Python
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="SQL" onchange="chooseSkill(event)" id="skills"> Sql
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="Java" onchange="chooseSkill(event)" id="skills"> Java
+                            </li>
+
+                            <li>
+                                <input type="checkbox"  name="Skills"  value="Angular" onchange="chooseSkill(event)" id="skills"> Angular 
+                            </li>
+                           
+                        </label>
+                        </ul>
+                       
+                    
+                    <label>Upload your profile photo <input type="file" accept="image/*" id="img" name="profileImage" onchange="im(event)"></label>
+                    <input type="submit" value="Submit" >
+
+                </fieldset>
+                </form>
+
+
+
+
+        </section>
+
+        <!--form section ends here -->
+
+        <!-- card section starts here -->
+
+        <section id="cardSection">
+               
+                <ul id="cardUl" type="none">
+                   
+
+                </ul>
+
+
+            
+
+        </section>
+
+        <!-- card section ends here -->
+
+
+        <script>
+
+
+                                  
+              const empDetails =  [
+                                   { name : 'Mutyam',
+                                    place : 'Guntur',
+                                    role : 'Web Developer',
+                                    linkedinUrl : 'www.linkedin.com/in/mutyam-bhargav-reddy',
+                                    githublink : 'https://github.com/Mutyam3',
+                                    skills : ["FrontEnd Development","HTML","SQL","Java"],
+                                    image : "blob:http://127.0.0.1:5500/d1732297-e90d-42db-b770-85d455113eee"
+                                    }
+
+                                  ]
+
+       let empName = document.employeeForm.name;
+       let empPlace = document.employeeForm.place;
+       let empRole = document.employeeForm.role;
+       let empLinkedIn = document.employeeForm.linkedinURL;
+       let empGithubLink = document.employeeForm.githubLink;
+       let empSkills = document.employeeForm.Skills;
+       let empImage = document.employeeForm.profileImage;
+       let url;
+       let empObject;
+
+       let skillsArr = [];
+
+                    empObject =    {
+                                    name : '',
+                                    place : '',
+                                    role : '',
+                                    linkedinUrl : '',
+                                    githublink : '',
+                                    skills : [],
+                                    image : ''
+                                    }
+                     
+
+                      function chooseSkill(ev)
+                              {
+                               
+                                     if(ev.target.checked === true)
+                                     {
+                                        console.log(ev.target.value)
+                                         skillsArr.push(ev.target.value)   
+                                     }
+                                     else 
+                                     {
+                                         skillsArr = skillsArr.filter(function(uncheckskill)
+                                                                  {
+                                                                      if(uncheckskill == ev.target.value)
+                                                                      {
+                                                                        return false 
+                                                                      }
+                                                                      else
+                                                                      {
+                                                                        return true
+                                                                      }
+                                                                  }
+                                                               )
+                                     }
+
+                                    //  return skillsArr;
+
+                                    console.log(skillsArr)
+                                  
+                              }
+
+                              //image url generator
+                               function im(ev)
+                                {
+                                       url =  window.URL.createObjectURL(ev.target.files[0]);
+                                }       
+                          
+                              function employeeFormSubmit(e)
+                              {
+                                    e.preventDefault();
+
+                                empObject.name = empName.value
+                                empObject.place = empPlace.value 
+                                empObject.role = empRole.value 
+                                empObject.linkedinUrl = empLinkedIn.value 
+                                empObject.githublink = empGithubLink.value
+                                empObject.skills = [...skillsArr] 
+                                empObject.image = url
+                                empDetails.push(empObject)
+                                   console.log(url)
+                                console.log(empDetails)
+                                
+                                genUI()
+                                   
+                                refresh()
+
+
+                               
+                              }
+
+
+
+                              function refresh()
+                              {
+                                 empName.value = '',
+                                 empPlace.value = '',
+                                 empRole.value = '',
+                                 empLinkedIn.value = '',
+                                 empGithubLink.value = '',
+                                 empImage.value = '' 
+                                 let skillRef = document.querySelectorAll("#skills")
+                                         skillRef.forEach(function(el)
+                                                 {
+                                                     el.checked = false 
+                                                 }
+                                         )
+                                      
+                                 
+                                    empObject = {
+                                    name : '',
+                                    place : '',
+                                    role : '',
+                                    linkedinUrl : '',
+                                    githublink : '',
+                                    skills : [],
+                                    image : ''
+                                    }
+
+                                    skillsArr = []
+                                 }
+
+
+
+                    function genUI()
+                    {
+                        document.getElementById("cardUl").innerHTML = ""
+                         empDetails.forEach(function(el) 
+                         {
+                            var newli = document.createElement("li")
+                                           newli.setAttribute("class" , "cards")
+                            var upDiv = document.createElement("div")
+                                           upDiv.setAttribute("id", "upCard")
+                            var imageDiv = document.createElement("div")
+                                           imageDiv.setAttribute("id", "profileImg")
+                            var imageUrl = document.createElement("img")
+                                           imageUrl.src= el.image
+                                imageDiv.appendChild(imageUrl)
+                                upDiv.appendChild(imageDiv)
+
+                            var infoDiv = document.createElement("div")
+                                          infoDiv.setAttribute("class", "infoDiv")
+                            var namePara = document.createElement("p")
+                                           namePara.innerHTML = el.name 
+                            var placeSpan = document.createElement("span")
+                                            placeSpan.innerHTML = "<i class='fa-solid fa-location-dot'>"+"</i>" + " " + el.place.toUpperCase()
+                            var rolePara = document.createElement("p")
+                                           rolePara.innerHTML = el.role 
+
+                             var iconGit = document.createElement("a") 
+                                           iconGit.href = el.githublink
+                                           iconGit.innerHTML = "<i class='fa-brands fa-github'>"+"</i>"
+                                        
+
+                            var iconLinkedin = document.createElement("a") 
+                                           iconLinkedin.href = el.linkedinUrl
+                                           iconLinkedin.innerHTML = "<i class='fa-brands fa-linkedin'>" + "</i>"
+                                         console.log(iconLinkedin)
+
+                            var skillsUl = document.createElement("ul")
+                                           skillsUl.setAttribute("class", "skillsUl")
+                                           skillsUl.innerHTML = "Skills"
+                                          el.skills.forEach(function(e)
+                                                    {
+                                                    var skillli = document.createElement("li")
+                                                                   skillli.innerHTML = e 
+                                                        skillsUl.appendChild(skillli)
+                                                    }
+                                           )
+
+                                     newli.appendChild(upDiv)
+                                     infoDiv.appendChild(namePara)
+                                     infoDiv.appendChild(placeSpan)
+                                     infoDiv.appendChild(rolePara)
+                                     infoDiv.appendChild(iconGit)
+                                     infoDiv.appendChild(iconLinkedin)
+                                     infoDiv.appendChild(skillsUl)
+                                     newli.appendChild(infoDiv)
+                                    
+                              document.getElementById("cardUl").appendChild(newli)
+
+                         }
+                        
+                         )
+                    }
+
+        </script>
+
+    </body>
+</html>
