@@ -1,0 +1,239 @@
+<html>
+    <head>
+        <title>
+            Mutyam ==>  BANK CARDS 
+        </title>
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width   initial-scale=1">
+    </head>
+
+    <body>
+ 
+                  <h2>Bank Cards</h2>
+
+
+                 <form name="customerInfo" onsubmit="customerForm(event)">
+                     <fieldset>
+                          <legend>
+                                Please Fill out the Form to get your Bank Card 
+                          </legend>
+
+                        <label for="fname"> FirstName: <input type="text" id="fname" name="firstName" placeholder="Enter your First Name"><span id="firstName">* Please enter your First Name</span></label><br>
+                        <label for="lname"> LastName:  <input type="text" id="lname" name="lastName" placeholder="Enter your Last Name" ><span id="lastName">* Please enter your Last Name</span></label><br>
+                        <label for="dob"> Date of Birth :<input type="date" id="dob" name="dateOfBirth" ><span id="dateOfBirth">* Please enter your Date of Birth</span></label><br>
+                        <label for="gen">Gender :<input type="radio" id="gen" name="gender" value="Male">Male:
+                                                 <input type="radio" id="gen" name="gender" value="Female">Female:
+                                                 <input type="radio" id="gen" name="gender" value="Others">Others:
+                                                 <span id="gender">* Please select gender </span>
+                        </label><br>
+                        <label for="phoneNum">PhoneNumber : <input type="tel" id="phoneNum" name="phoneNumber" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" minlength="12" >
+                            <span id="phoneNumber">* Please enter Phone Number</span></label><br>
+                        <label for="accountNum">Account Number :<input type="text" id="accountNum" name="accountNumber" placeholder="Enter your Account Number " maxlength="11" minlength="11" >
+                            <span id="accountNumber">* Please enter Account Number</span></label><br>
+                        <label for="acc"> Account :<select  id="acc" name="Account">
+                                                  <option selected disabled>---Select Account Type---</option>
+                                                  <option value="Savings">Savings Account</option>
+                                                  <option value="Current">Current Account</option>
+                                                  <option  value="Salary">Salary Account</option>
+                        </select><span id="Account">* Please select Account type</span></label><br>
+
+
+                        <label for="place">Place : <input type="text" id="place" name="Place"><span id="Place">* Please enter your Place</span></label><br>
+                        <label for="confirm"><input type="checkbox" id="confirm" name="confirmation">Confirm above the details before submitting the form <span id="confirmation">* Please tick the checkbox </span></label><br>
+                        <button id="mainFormBtn">Save</button>
+          
+                     </fieldset>
+                 </form>
+
+                 <p id="message">Successfully saved your form and you can proceed with next step!</p>
+                 
+                 <h2>Customize your card </h2>
+
+                 <!-- ATM CARD DESIGN STARTS HERE -->
+                 
+                 <form name="card" onsubmit = "cardSubmit(event)" >
+                    <div id = "ATMCard">
+                    <div id = "cardHead">
+                     <input type="text" placeholder="Name to the card" name="cardName">
+        
+                     <label for="BankName">
+                        <select name="bankName" id="BankName">
+                            <option selected disabled>Select Bank Name</option>
+                            <option value="SBI">SBI</option>
+                            <option value="HDFC">HDFC</option>
+                            <option value="AXIS">AXIS</option>
+                            <option value="KOTAK MAHINDRA">KOTAK MAHINDRA</option>
+                            <option value="BANK OF BARODA">BANK OF BARODA</option>
+                       </select>
+                   </label>
+                   </div>
+
+                   <div id="cardBody">
+                      
+                      <div id="cardImg"><img src="./images/cardChipbest.jpg" alt="EMV Chip"></div>
+                      <p id="cardNumber"><b>1 2 3 4</b><b>5 6 7 8 </b><b> 9 0 1 2 </b><b>4 5 6 7</b></p>
+                      <!-- <div> -->
+                      <p>VALID<br>THRU</p>
+                      <b>01/28</b>
+                      <!-- </div> -->
+
+                   </div>
+
+                   <div id="cardfooter">
+                   
+                        <input type="text" name= "cardHolderName" placeholder="Enter cardHolderName">
+                    
+                   <label for="card type">
+                    <select id="card type" name="cardType">
+                        <option selected disabled>ATM CARD TYPE</option>
+                        <option value="Visa">Visa Card</option>
+                        <option value="Rupay">Rupay Card</option>
+                        <option value="Master">Master Card</option>
+                    </select>
+                  </label>
+                  </div>
+                  </div>
+                  
+                  
+
+                <div class ="themeDiv">
+                     <label for="color">Set Background Color: 
+                        <input type="color" id="color" name="bgColor" value="#E3E2E7" onchange="customizedCardBgColor(event)" required>
+                     </label> 
+
+                     <label for="img">Set Background Image: <br>
+                          <input type="file" accept="image/*" id="img" name="image" onchange="customizedCardBgImg(event)">
+                     </label>
+
+                     <label for="col">Set color :
+                         <input type="color" id="col" name="fontColor" onchange="customizedCardColor(event)" required>
+                     </label>
+
+                     <label for="font-family">Choose Font-family 
+                         <select name="fontFamily" id="font-family" onchange="customizedCardFontSize(event)">
+                                <option selected disabled>--select font-family--</option>
+                                <option value="Arial">Arial</option>
+                                <option value="serif">Serif</option>
+                                <option value="cursive">Cursive</option>
+                                <option value="system-ui">System-ui</option>
+                                <option value="Georgia">Georgia</option>
+                         </select>
+                     </label>
+
+                     <label></label>
+                          
+                </div>
+
+                <div id="submitBtn">
+                    <button id="cardSubBtn">Submit</button>
+                    <button id="updt" onclick = update()>Update</button>
+                  </div>
+
+            </form>
+
+            <!-- ATM CARD DESIGN ENDS HERE -->
+                <hr>
+
+                <section>
+
+                    <div class="themeDiv filterBox" >
+                      <label for="searchDetails">Search
+                        <input type="text" placeholder="Search" id="searchDetails" onkeyup="searchItem(event)">
+                      </label>
+                        
+                      <div>
+                        <label>Sort based on Asc and Desc <br>
+                        <select name="order" id="order" onchange="sortASCDESC(event)">
+                            <option value="ascending order">Ascending Order</option>
+                            <option value="descending order">Descending Order</option>
+                        </select>
+                    </label>
+                      </div>
+                      
+                      <!-- <div>
+                      <label>Sort based on user info<br>
+                      <select name="userInfo" id="userInfo">
+                          <option selected disabled>Select user info</option>
+                          <option value="name">Name</option>
+                          <option value="age">Age</option>
+                          <option value="phoneNumber">PhoneNumber</option>
+                          <option value="accountNumber">AccountNumber</option>
+                          <option value="accountType">Account Type</option>
+                          <option value="place">Place</option>
+                      </select>
+                    </label>
+                          
+                      </div> -->
+
+                      <div>
+
+                      <label>Filter based on CardType<br>
+                            <select name="cardType" id="cardType" onchange="cardTypeFilter(event)">
+                                   <option selected disabled>Select cardType</option>
+                                   <option value="Master">Master Card</option>
+                                   <option value="Visa">Visa Card</option>
+                                   <option value="Rupay">Rupay Card</option>
+                             </select>
+                            </label>
+                      </div>
+
+                      <div>
+                      <label>Filter based on Bank Name<br>
+
+                                <select name="BankName" id="bankName" onchange="bankNameFilter(event)">
+                                    <option selected disabled>Select Bank Name</option>
+                                    <option value="SBI">SBI</option>
+                                    <option value="HDFC">HDFC</option>
+                                    <option value="AXIS">AXIS</option>
+                                    <option value="KOTAK MAHINDRA">KOTAK MAHINDRA</option>
+                                    <option value="BANK OF BARODA">BANK OF BARODA</option>
+                                </select>
+                            </label>
+                      </div>
+
+                    </div>
+
+
+                    <div id="tableDiv">
+                        <table border="" cellspacing = "0">
+                            <thead>
+                               <th>S.No</th>
+                               <th>Customer Details</th>
+                               <th>Card</th>
+                               <th>Options</th>
+                            </thead>
+                            <tbody id="tbd" align="center">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+
+
+       <script src = "index.js"></script>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
